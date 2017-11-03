@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>First Name</td>
+        <td>{{firstName}}</td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>{{lastName}}</td>
+    </tr>
+    <tr>
+        <td>Full Name</td>
+        <td>{{getname()}}</td>
+    </tr>
+    <tr id="gndr" [class.shw]="shwdtls">
+        <td>Gender</td>
+        <td>{{gender}}</td>
+    </tr>
+    <tr id="ag" [class.shw]="shwdtls">
+        <td>Age</td>
+        <td>{{Age}}</td>
+    </tr>
+
+</table>
+<button (click)="showdetails()">{{ shwdtls ? 'Show details' : 'Hide details'}}</button>

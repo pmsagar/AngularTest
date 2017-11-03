@@ -1,0 +1,34 @@
+<app-employeecount [all]="gettotalemployeescount()" [male]="getmaleemployeescount()" [female]="getfemaleemployeescount()" (countRadioButonSelectionChanged)="onEmployeeCountSelectionChanged($event)"></app-employeecount>
+<p>
+    ngFor Implementation
+</p>
+
+<table>
+    <thead>
+        <th>Empployee ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Index</th>
+        <th>Even</th>
+        <th>Odd</th>
+        <th>First</th>
+        <th>Last</th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let employee of employees;let isFirst=first;let isLast=last;let Index=index;let Even=even;let Odd=odd">
+            <tr *ngIf="srbv== 'All' || srbv == employee.gender">
+                <td>
+                    {{employee.empid}}</td>
+                <td>{{employee.name}}
+                </td>
+                <td>{{employee.gender}}</td>
+                <td>{{Index}}</td>
+                <td>{{Even}}</td>
+                <td>{{Odd}}</td>
+                <td>{{isFirst}}</td>
+                <td>{{isLast}}</td>
+
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
